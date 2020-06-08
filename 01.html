@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math</title>
+    <script>
+        // 获取任意两个值之间的随机整数
+        var random1 = function(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min)
+        }
+        console.log(random1(1, 25))
+            // 获取随机颜色
+        var randomcolor = function() {
+            var r = random1(0, 256),
+                g = random1(0, 256),
+                b = random1(0, 256);
+            var result = `rgb(${r},${g},${b})`;
+            return result;
+        }
+        console.log(randomcolor())
+            // document.body.style.backgroundColor = red;
+            // 猜数字游戏
+            // function getnum() {
+            //     num = random1(1, 10);
+            //     gessnum = parseInt(prompt('请输入1到10之间的数字'));
+
+        //     while (1) {
+        //         if (gessnum > num) {
+        //             gessnum = prompt('你输入的数值大了，继续猜')
+
+        //         } else if (gessnum < num) {
+        //             gessnum = prompt('你输入的数值小了，继续猜')
+
+        //         } else {
+        //             alert('恭喜猜对了');
+        //             break;
+        //         }
+        //     }
+        // }
+        // getnum()
+        // 猜1=50之间的数字，10次机会
+        function guesnum() {
+            var num = random1(1, 50);
+            for (var i = 0; i < 10; i++) {
+                gessnum = parseInt(prompt('请输入1到50之间的数字'));
+                if (gessnum > num) {
+                    alert('你输入的数值大了，继续猜')
+                } else if (gessnum < num) {
+                    alert('你输入的数值小了，继续猜')
+
+                } else if (gessnum == num) {
+                    alert('恭喜猜对了');
+                    break;
+                }
+            }
+
+            alert('没猜对')
+        }
+
+        guesnum()
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
